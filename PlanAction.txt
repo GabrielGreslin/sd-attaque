@@ -1,0 +1,11 @@
+
+---Toujours garder un plot de ce que l'on vient de tester OU une trace du résultat---
+
+Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
+    Créer un métrique temporelle cyclique sur 24h.
+    Sans cycle -> voir différence
+
+Trouver les infos sur les custers
+    adresse, entité à l'adresse
+
+Déduire des infos : marié? enfant? travail? religion?
