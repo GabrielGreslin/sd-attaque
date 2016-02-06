@@ -1,11 +1,11 @@
 
 ---Toujours garder un plot de ce que l'on vient de tester OU une trace du résultat---
 
-Vérifier si accord avec le sujet
+[Gabriel]Vérifier si accord avec le sujet
 
-Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
-    Créer un métrique temporelle cyclique sur 24h.
-    Ainsi qu'une Sans cycle -> voir différence
+[Gabriel]Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
+    [Gabriel]Créer un métrique temporelle cyclique sur 24h.
+    [Gabriel]Ainsi qu'une Sans cycle -> voir différence
 
 Trouver les infos sur les custers
     adresse, entité à l'adresse + événements marginaux
