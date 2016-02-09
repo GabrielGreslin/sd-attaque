@@ -1,8 +1,14 @@
 
 ---Toujours garder un plot de ce que l'on vient de tester OU une trace du résultat---
 
-[Gabriel]Vérifier si accord avec le sujet
+Partie 1 :
+Que peut-on inférer à premier vue ?
 
+Partie 2:
+Attaque BeginEnd ( regarder où sont les temps morts)
+[Abdé]
+
+Attaque Clustering
 [Gabriel]Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
     [Gabriel]Créer un métrique temporelle cyclique sur 24h.
     [Gabriel]Ainsi qu'une Sans cycle -> voir différence
@@ -12,6 +18,10 @@ Trouver les infos sur les custers
 
 Déduire des infos : marié? enfant? travail? religion?
 
-
+Partie 3:
+Quelle informations peut-on trouver sur son binome ?
+Sont-elles sensibles ?
+Commenter.
+[Abdé][Gabriel]
 
 https://www.dropbox.com/home/Rapport-sd-attaque
