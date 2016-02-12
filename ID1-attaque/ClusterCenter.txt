@@ -17,4 +17,12 @@
  [ 43.51865065   1.52276467   0.35555242]]
 
 
-45.88951 6.13734 median Hotel
+45.88951 6.13734 median Hotel Les Trésoms Lake & Spa Resort Annecy
+
+Cluster sur les 80% points les plus proches du culters à Annecy :
+[[ 45.88978067   6.13807213   0.68590648] -> Hotel Trésoms
+ [ 45.89586727   6.14474394   0.58026445]
+ [ 45.89030207   6.13923724   0.775447  ]
+ [ 45.88889833   6.13793      0.85446566]]
+
+
