@@ -5,7 +5,7 @@ import loadData
 import datetime
 
 # Data
-data = loadData.getID1Data()
+data = loadData.getID2DataOrdered()
 #data = data[0:50]
 groups = []
 
@@ -40,14 +40,6 @@ for g in groups:
     last = g[1]
     points_begin.append(data[first])
     points_end.append(data[last])
-
-ts = points_begin[0][2]
-day = datetime.datetime.fromtimestamp(ts).strftime('%w')
-
-print('ts:')
-print(ts)
-print('day:')
-print(day)
 
 if T > h:
     file_id = str(T/h) + "h"
