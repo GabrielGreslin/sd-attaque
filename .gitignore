@@ -5,3 +5,4 @@
 .idea/vcs.xml
 .idea/workspace.xml
 __pycache__/loadData.cpython-34.pyc
+__pycache__/clustering.cpython-34.pyc
