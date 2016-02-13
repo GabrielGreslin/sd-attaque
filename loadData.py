@@ -8,3 +8,9 @@ def getID1Data():
     filename = os.path.realpath("{0}\\Raw_Data\\ID1.txt".format(dir))
     out = np.loadtxt(filename,delimiter=",",skiprows=1)
     return out
+
+def getID2Data():
+    dir = os.path.dirname(__file__)
+    filename = os.path.realpath("{0}\\Trans_Data\\ID2_new.txt".format(dir))
+    out = np.loadtxt(filename,delimiter=",",skiprows=1)
+    return out
