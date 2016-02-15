@@ -6,7 +6,7 @@ from math import tan,log,pi
 
 import time
 '''
-Load the ID1 data as a three column numpy array
+Load the data as a three column numpy array
 Lat, Long, time
 '''
 def getID1Data():

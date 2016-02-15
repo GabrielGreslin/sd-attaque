@@ -9,9 +9,9 @@ Attaque BeginEnd ( regarder où sont les temps morts)
 [Abdé]
 
 Attaque Clustering
-[Gabriel]Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
-    [Gabriel]Créer un métrique temporelle cyclique sur 24h.
-    [Gabriel]Ainsi qu'une Sans cycle -> voir différence
+[Done]Créer une fonction pour detecter des clusters de points. sklearn.cluster.KMeans
+    [Done]Créer un métrique temporelle cyclique sur 24h.
+    [Done]Ainsi qu'une Sans cycle -> voir différence
 
 Trouver les infos sur les custers
     adresse, entité à l'adresse + événements marginaux
