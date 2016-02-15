@@ -1,5 +1,3 @@
-from sklearn.utils.validation import DataConversionWarning
-
 __author__ = 'Gabriel'
 
 '''
@@ -15,19 +13,11 @@ from statistics import mean,median
 
 
 
-
 data = ld.getID1Data()
 
 data = ld.dataSelectTime(data,10,16,[0,1,2,3,4],1)
 
 data = clus.temporalAround24removed(data)
-
-#data = clus.inputKmean(data,clus.distanceOnlyGeographique)
-#print(data)
-
-#Trois endroits en dehors de toulouse
-#Trois endroits dans Toulouse
-
 
 
 data=clus.removeTime(data)

@@ -3,54 +3,52 @@ __author__ = 'Gabriel'
 '''
 Kmean on position
 '''
-import sys
-sys.path.append('../')
 
-import loadData
+import loadData as ld
+import clustering as clus
+
 import sklearn.cluster as cluster
-from math import tan,log,pi
+import numpy as np
+from statistics import mean,median
 
-import matplotlib.pyplot as plt
 
-data = loadData.getID2Data()
 
-for d in data:
-    data[3] = data[3] % (24 * 60 * 60)
+data = ld.getID2Data()
 
-#Trois endroits en dehors de toulouse
-#Trois endroits dans Toulouse
+######If you want to select particular moments in the day
+timeShift= -8 #San Francisco
+data = ld.dataSelectTime(data,0,24,[0,1,2,5,6],timeShift)
 
-kk = cluster.KMeans(n_clusters=6)
+####### Modulo 24 hours
+#data = clus.temporalAround24removed(data)
+
+#######Remove time
+#data=clus.removeTime(data)
+
+kk = cluster.KMeans(n_clusters=10,random_state=0)
 out = kk.fit(data)
 
-colors = ['red', 'green', 'blue','yellow','black','brown']
+clus.plotCluster(data,out.labels_,10)
+print("Cluster center " + str(out.cluster_centers_))
+ld.fromDataClusterToCsv(data,out.labels_,"Raw")
 
-def getXYTForClassI(out,data, classNumber):
-    x,y,t = ([],[],[])
-    for i,l in enumerate(data):
-        if(out.labels_[i] == classNumber):
-            x.append(l[0])
-            y.append(l[1])
-            t.append(l[2])
+###### Select a center and get the 80% closest values to this center removed to far points
+partialdata = clus.getThe80percentClosestToACenter(data,out,0)
 
-    return x,y,t
+print(partialdata)
 
-def fromDegreeToRad(degree):
-    return degree/180*pi
+###### Second cluster on the partial data
+'''
+kk2 = cluster.KMeans(n_clusters=3,random_state=0)
+out2 = kk2.fit(partialdata)
 
-def MillerProjection(lat,long):
-    print(lat)
-    x = [5/4 * log(tan(pi/4+2*fromDegreeToRad(l)/5)) for l in lat]
-    y = [fromDegreeToRad(i) for i in long]
-    return x,y
+print(out2.cluster_centers_)
 
-for i,color in enumerate(colors):
-    x,y,t = getXYTForClassI(out,data,i)
-    scale = 10
-    x,y = MillerProjection(x,y)
-    plt.scatter(y, x, c=color, s=scale, label=color,alpha=0.3, edgecolors='none')
 
-plt.legend()
-plt.grid(True)
+clus.plotCluster(partialdata,out2.labels_,3)
 
-plt.show()
+ld.fromDataClusterToCsv(partialdata,out2.labels_,"Home")
+#x,y,t = ld.getXYTForClassI(partialdata,1)
+'''
+
+
