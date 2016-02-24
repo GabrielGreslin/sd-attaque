@@ -11,6 +11,12 @@ def temporalAround24removed(data):
 
     return data
 
+def temporalAround7Daysremoved(data):
+    for i,l in enumerate(data):
+        data[i][2] = float((l[2] % (24*60*60*7)) / 86400.)
+
+    return data
+
 '''
 Distance definition with small time difference
 '''

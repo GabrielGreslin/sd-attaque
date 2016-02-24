@@ -13,11 +13,11 @@ from statistics import mean,median
 
 
 
-data = ld.getID2Data()
+data = ld.getID3Data()
 
 ######If you want to select particular moments in the day
 timeShift= -8 #San Francisco
-data = ld.dataSelectTime(data,0,24,[0,1,2,5,6],timeShift)
+data = ld.dataSelectTime(data,0,24,range(0,6),timeShift)
 
 ####### Modulo 24 hours
 #data = clus.temporalAround24removed(data)
@@ -25,10 +25,10 @@ data = clus.temporalAround7Daysremoved(data)
 #######Remove time
 #data=clus.removeTime(data)
 
-kk = cluster.KMeans(n_clusters=5,random_state=0)
+kk = cluster.KMeans(n_clusters=7,random_state=0)
 out = kk.fit(data)
 
-clus.plotCluster(data,out.labels_,5)
+clus.plotCluster(data,out.labels_,7)
 print("Cluster center " + str(out.cluster_centers_))
 ld.fromDataClusterToCsv(data,out.labels_,"WorkingDays")
 

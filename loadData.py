@@ -27,6 +27,12 @@ def getID2DataOrdered():
     out = np.loadtxt(filename,delimiter=",",skiprows=1)
     return out
 
+def getID3Data():
+    dir = os.path.dirname(__file__)
+    filename = os.path.realpath("{0}\\Trans_Data\\ID3_new.csv".format(dir))
+    out = np.loadtxt(filename,delimiter=",",skiprows=1)
+    return out
+
 '''
 Convert degree to rad
 '''
