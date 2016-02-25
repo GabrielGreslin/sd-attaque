@@ -14,7 +14,7 @@ import datetime
 import math
 
 #Get the data
-data = ld.getID3Data()
+data = ld.getID1Data()
 
 
 def addSpeed(data):
@@ -45,7 +45,18 @@ def changeTimePrintCsv(data,name,htimeShift = 1):
     file = open(name+'.csv',"w")
     file.write("latitude,longitude,time,speed\n")
 
+    pointBegin = 0
+    pointEnd = 300000
+
     for i,l in enumerate(data):
+        if i < pointBegin:
+            continue
+        elif i> pointEnd:
+            break
+
+        if abs(l[3]) > 1e-3:
+            continue
+
         timeStr =  datetime.datetime.fromtimestamp(l[2] + htimeShift * 3600 ).strftime('%A %d %B %H:%M:%S')
         line = str(l[0]) + ","+str(l[1]) + "," + timeStr +","+str(l[3])+"\n"
         file.write(line)
@@ -54,5 +65,5 @@ def changeTimePrintCsv(data,name,htimeShift = 1):
 
 
 data = addSpeed(data)
-
-changeTimePrintCsv(data,"SpeedAndTime3",-8)
+#data = ld.dataSelectTime(data,0,24,[2],-8)
+changeTimePrintCsv(data,"SpeedAndTime1",+1)

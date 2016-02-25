@@ -4,11 +4,11 @@ Remove the boolean value
 '''
 
 file = open("Raw_Data\\ID2.txt","r")
-dest = open("Trans_Data\\ID2_new.txt","w")
+dest = open("Trans_Data\\ID2_new.csv","w")
 dest.write("latitude,longitude,time\n")
 
 #Number of line to keep
-nbLineTODo = 2000
+nbLineTODo = 10000000
 i=0
 
 for l in file:

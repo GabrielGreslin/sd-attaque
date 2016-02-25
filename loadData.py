@@ -84,7 +84,7 @@ def dataSelectTime(data,hourBegin, hourEnd,day=[0,1,2,3,4,5,6],hoursShift=1):
 
     for i,l in enumerate(data):
         t= l[2]
-        t -= hoursShift*60*60
+        t += hoursShift*60*60
         st = time.gmtime(t)
 
         if not (st.tm_hour >= hourBegin and hourEnd >= st.tm_hour and st.tm_wday in day):
